@@ -1,0 +1,515 @@
+/* ********** FONTS ********** */
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins-Regular.ttf");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Poppins-black";
+  src: url("../../assets/fonts/Poppins-Black.ttf");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Lora";
+  src: url("../../assets/fonts/Lora-Regular.ttf");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Bubblegum";
+  src: url("../../assets/fonts/BubblegumSans-Regular.otf");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+/* ********** ********* ********** */
+
+
+
+/* ********** CUSTOM PROPERTIES ********** */
+:root {
+  --white-primary: rgb(229 229 234);
+  --white-secondary: rgb(242 242 247);
+  --black-primary: rgb(28 28 30);
+  --black-secondary: rgb(44 44 46);
+  --red-danger: rgb(255 59 48);
+  --blue-primary: rgb(10 132 255);
+  --blue-secondary: rgb(0 122 255);
+  --yellow-warning: rgb(255 179 64);
+  --green-success: rgb(48 209 88);
+  --green: rgb(36 138 61);
+  --gray: rgb(108 108 112);
+
+/* @link https://utopia.fyi/type/calculator?c=300,12,1.2,1240,22,1.25,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  --step--2: clamp(0.5208rem, 0.4062rem + 0.6113vi, 0.88rem);
+  --step--1: clamp(0.625rem, 0.4734rem + 0.8085vi, 1.1rem);
+  --step-0: clamp(0.75rem, 0.5505rem + 1.0638vi, 1.375rem);
+  --step-1: clamp(2.2395rem, 1.2802rem + 5.1161vi, 5.2452rem);
+  --step-2: clamp(1.8662rem, 1.1226rem + 3.9658vi, 4.1962rem);
+  --step-3: clamp(1.5552rem, 0.9802rem + 3.0668vi, 3.3569rem);
+  --step-4: clamp(1.296rem, 0.8525rem + 2.3652vi, 2.6855rem);
+  --step-5: clamp(1.08rem, 0.739rem + 1.8186vi, 2.1484rem);
+  --step-6: clamp(0.9rem, 0.6387rem + 1.3936vi, 1.7188rem);
+
+
+}
+/* ********** ********* ********** */
+
+
+
+/* ********** RESET CSS ********** */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+body {
+  min-height: 100dvh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white-primary);
+  color: var(--black-primary);
+  font-family: Lora, sans-serif;
+}
+/* Multimedia se adapta al tamaño del contenedor */
+img, audio, video, iframe, canvas, svg, picture {
+  max-width: 100%;
+  height: auto;
+}
+/* Balanceo de los títulos y los párrafos */
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+  font-family: Poppins, sans-serif;
+}
+h1 {
+  font-size: var(--step-1);
+}
+h2 {
+  font-size: var(--step-2);
+}
+h3 {
+  font-size: var(--step-3);
+}
+h4 {
+  font-size: var(--step-4);
+}
+h5 {
+  font-size: var(--step-5);
+}
+h6 {
+  font-size: var(--step-6);
+}
+p {
+  text-wrap: pretty;
+  font-size: var(--step-0);
+}
+li {
+  font-size: var(--step-0);
+}
+/* ********** ********* ********** */
+
+
+
+/* ********** COMPONENTS ********** */
+
+/* ********** ********* ********** */
+
+
+
+/* ********** UTILITIES ********** */
+
+/* ********** ********* ********** */
+
+
+
+/* ********** SITE STYLES ********** */
+/* Theme color: dark and light */
+@media screen and (prefers-color-scheme: light) {
+  
+}
+@media screen and (prefers-color-scheme: dark) {
+  
+}
+
+
+
+.container {
+    width: clamp(300px, 75vw, 80%);
+    height: auto;
+    margin-inline: auto;
+}
+.subtitle {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 0.5rem;
+  align-items: center;
+  & svg {
+    width: 3rem;
+    height: 3rem;
+    stroke: var(--black-primary);
+    fill: var(--black-primary);
+    color: var(--black-primary);
+  }
+}
+.labels {
+  display: flex;
+  flex-flow: row wrap;
+  gap: .5rem;
+  font-family: "Bubblegum";
+  font-size: var(--step-0);
+  & a {
+    text-decoration: none;
+    background-color: var(--black-secondary);
+    color: var(--white-secondary);
+    padding: 1rem;
+    border: thin solid var(--black-primary);
+    border-radius: .5rem;
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    transition: all ease .5s;
+    &:hover {
+      background-color: var(--black-primary);
+    }
+    & img, & svg {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+}
+.info {
+  .degree {
+    color: var(--blue-primary);
+  }
+  .info-cv {
+    justify-content: start;
+  }
+}
+.technologies {
+  display: flex;
+  flex-flow: row wrap;
+  gap: .5rem;
+  font-family: "Bubblegum";
+  font-size: var(--step--2);
+  & span {
+    text-decoration: none;
+    background-color: var(--gray);
+    color: var(--white-primary);
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    transition: all ease .5s;
+    &:hover {
+      background-color: var(--black-secondary);
+    }
+    & img, & svg {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+}
+svg {
+  color: black;
+}
+
+
+#navigation-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;  
+  .logo {
+    display: none;
+  }
+  & nav {
+    background-color: var(--blue-secondary);
+    height: 10dvh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    & a {
+      text-decoration: none;
+      color: var(--white-primary);
+      font-family: Poppins;
+      font-size: var(--step-0);
+      padding: .5rem;
+      transition: background ease .5s;
+      border-radius: .5rem;
+      &:hover {
+        background-color: var(--blue-primary);
+        color: var(--white-secondary);
+      }
+    }
+  }
+}
+
+
+
+.info {
+  .info-profile {
+    margin-top: 5dvh;
+    > * {
+      margin-block: .5rem;
+    }
+    .info-profile_profile {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: start;
+      align-items: center;
+      gap: 1rem;
+      & img {
+        width: 15vw;
+        border: thin solid black;
+        border-radius: 50%;
+      }
+      & button {
+        padding: 1rem;
+        border-radius: 1rem;
+        background-color: var(--green);
+        color: var(--white-primary);
+        border: none;
+        cursor: pointer;
+        transition: background ease .5s;
+        font-family: "Bubblegum";
+        font-size: var(--step-0);
+        &:hover {
+          background-color: var(--green-success);
+        }
+      }
+    }
+  }
+  .info-cv {
+    & svg {
+      fill: var(--white-primary);
+    }
+  }
+}
+
+
+.experience {
+  .jobs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: .5rem;
+    .job {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: start;
+      > * {
+        margin-block: 0;
+      }
+      .title-job {
+        color: var(--blue-primary);
+        font-weight: bold;
+        font-size: var(--step-5);
+      }
+      .company-job {
+        font-weight: bold;
+        font-size: var(--step-6);
+      }
+    }
+    .job-info {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: end;
+    }
+
+  }
+}
+
+
+
+.projects {
+  .project {
+    margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: 1rem;
+    & img {
+      border-radius: .5rem;
+    }
+    .project-info {
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+      justify-content: center;
+      & h6 {
+        margin-block: .5rem;
+        text-align: left;
+      }
+      & p {
+        font-size: var(--step-0);
+        .finished, .unfinished, .inprogress {
+          font-weight: bold;
+        }
+        .finished {
+          color: var(--green-success);
+        }
+        .unfinished {
+          color: var(--red-danger);
+        }
+        .inprogress {
+          color: var(--yellow-warning);
+        }
+      }
+    }
+  }
+}
+
+
+
+.about-me {
+  .about-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: 1rem;
+    & p {
+      .highlight {
+        color: var(--blue-primary);
+        font-weight: bold;
+      }
+    }
+    & img {
+      position: static;
+      transform: rotate(3deg);
+      z-index: -1;
+      width: 75%;
+      margin: auto;
+      border: thick solid gray;
+      border-radius: .5rem;
+    }
+  }
+}
+
+
+
+.contact-me {
+  margin-bottom: 1.5rem;
+  & form {
+    display: flex;
+    flex-flow: column wrap;
+    gap: .5rem;
+    width: clamp(300px, 45vw, 45%);
+    height: auto;
+    margin-inline: auto;
+    input {
+      border-radius: 5px;
+      padding: 1rem;
+    }
+    input[type=text], input[type=email], textarea {
+      font-size: var(--step-0);
+      font-family: Poppins;
+      border-radius: 5px;
+    }
+    textarea {
+      form-sizing: content;
+      resize: none;
+      padding-left: 1rem;
+      padding-top: 1rem;
+    }
+    input[type=text]::placeholder, input[type=email]::placeholder, textarea::placeholder {
+      font-family: Poppins;
+      font-size: var(--step-0);
+    }
+    input[type=text]:focus, input[type=email]:focus, textarea:focus {
+      border: medium solid var(--blue-primary);
+    }
+
+    input[type=reset], input[type=submit] {
+      color: var(--white-primary);
+      cursor: pointer;
+      transition: background ease 1s;
+      font-family: "Bubblegum";
+      font-size: var(--step-0);
+    }
+    input[type=reset] {
+      background-color: var(--black-secondary);
+      &:hover{
+        background-color: var(--black-primary);
+      }
+    }
+    input[type=submit] {
+      background-color: var(--blue-secondary);
+      &:hover {
+        background-color: var(--blue-primary);
+      }
+    }
+
+    .btnForm {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: .5rem;
+    }
+
+  }
+
+}
+
+
+
+footer {
+  background-color: var(--black-primary);
+  color: var(--white-primary);
+  height: 15dvh;
+  display: grid;
+  place-content: center;
+  margin-bottom: 10dvh;
+  & p {
+    text-align: center;
+  }
+  & a{
+    color: var(--red-danger);
+    transition: color ease .5s;
+    text-decoration: none;
+    &:hover {
+      color: var(--white-primary);
+    }
+  }
+}
+
+
+
+/* Media queries 
+  Breakpoints
+  sm - 480px - 30em
+  md - 768px - 48em
+  lg - 992px - 62em
+  xl - 1200px - 75em
+*/
+@media (30em <= width) {
+  
+}
+@media (48em <= width) {
+  
+}
+@media screen and (62em <= width) {
+  #navigation-bar {
+    bottom: 100%;
+    top: 0;
+    .logo {
+      display: block;
+    }
+  }
+  .info-profile {
+    margin-top: 15dvh;
+  }
+  footer {
+    margin-bottom: 0;
+  }
+}
+@media (75em <= width) {
+  
+}
+
+/* ********** ********* ********** */
