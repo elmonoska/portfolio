@@ -501,8 +501,10 @@ footer {
       display: block;
     }
   }
-  .info-profile {
-    margin-top: 15dvh;
+  .info {
+    .info-profile {
+      margin-top: 15dvh;
+    }
   }
   footer {
     margin-bottom: 0;
